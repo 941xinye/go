@@ -16,7 +16,7 @@ func (o *RestController) List() {
 	if objectId != "" {
 		id, err := strconv.Atoi(objectId)
 		if err != nil {
-			o.Data["json"] = "123"
+			o.Data["json"] = "object no find"
 		} else {
 			o.Data["json"] = models.GetA(id)
 		}
