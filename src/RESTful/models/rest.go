@@ -15,7 +15,7 @@ type Artivity struct {
 }
 
 func (u *Artivity) TableName() string {
-	return "pre_activity"
+	return "pre_activity1"
 }
 func init() {
 	orm.RegisterModel(new(Artivity))

@@ -1,10 +1,12 @@
 package main
 
 import (
+	"RESTful/methods"
 	_ "RESTful/routers"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/hprose/hprose-golang/rpc"
 )
 
 func init() {
@@ -17,5 +19,14 @@ func main() {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
+	artivity := &methods.Artivity{}
+	service := rpc.NewHTTPService()
+	service.AddAllMethods(artivity)
+	beego.Handler("/artivity", service)
+
+	article := &methods.Article{}
+	service1 := rpc.NewHTTPService()
+	service1.AddAllMethods(article)
+	beego.Handler("/article", service1)
 	beego.Run()
 }
