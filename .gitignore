@@ -8,11 +8,11 @@ nbproject
 .buildpath
 .project
 .settings
-*.jpg
-*.png
-*.gif
-*.jpeg
-*.bmp
+#*.jpg
+#*.png
+#*.gif
+#*.jpeg
+#*.bmp
 # composer vendor dir
 /bin
 /pkg
